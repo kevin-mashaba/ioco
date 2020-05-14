@@ -1,0 +1,13 @@
+package com.ioco;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class IoCoApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(IoCoApplication.class, args);
+	}
+
+}
