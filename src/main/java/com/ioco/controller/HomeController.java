@@ -74,17 +74,16 @@ public class HomeController
 			}
 			else
 			{
-			//	Criteria c = getSession()
+			
 				
 			
 					Set<UserRole> userRoles = new HashSet<>();
 					
 					userRoles.add(new UserRole(user, roleDao.findByName("ROLE_USER")));
 					userService.createUser(user,userRoles);
-					System.out.println("Do we get in here?");
 					
-//				userRoles.add(new UserRole(user, roleDao.findByName("ROLE_USER")));
-//				userService.createUser(user,userRoles);
+					
+
 				
 			}
 		}
@@ -135,7 +134,7 @@ public class HomeController
 		model.addAttribute("primaryAccount",primaryAccount);
 		model.addAttribute("savingsAccount",savingsAccount);
 		model.addAttribute("creditCard",creditCard);
-		//System.out.println("account number " + usd);
+		
 		return "dashboard";
 	}
 }

@@ -24,7 +24,6 @@ public class AccountSerivceImpl implements AccountService{
 	
 	private static String accountType = "cheque";
 	
-	private static double limit =-10000;
 	
 	@Autowired
 	private PrimaryAccountDao primaryAccountDao;
@@ -125,13 +124,16 @@ public class AccountSerivceImpl implements AccountService{
 			if(amount <= 10000 )
 			{
 					
+				result ="reached limit";
+				
 				primaryAccount.setAccountBalance(primaryAccount.getAccountBalance().subtract(new BigDecimal(amount)));
 				newAmount = primaryAccount.getAccountBalance().doubleValue();
-			
 				
 				if(newAmount >= -10000)
 				{
 					result ="reached limit";
+					
+					
 					primaryAccountDao.save(primaryAccount);
 					
 				}
